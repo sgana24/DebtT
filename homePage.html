@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+       
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            width: 35%;
+            border-radius: 10px;
+            align-items: center;
+            margin-top: 40px;
+            background: gray;
+            padding: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .text-debt{
+            text-align: center;
+            font-size: 25px;
+            color: #000;
+            margin-top: 10px;
+        }
+
+        .text-value{
+            text-align: center;
+            font-size: 25px;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        footer {
+  	    background-color: #333;
+  	    color: #fff;
+  	    text-align: center;
+  	    padding: 10px 0;
+	    margin-top: 80px;	
+	}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome, User</h1>
+        </div>
+        <div class="content">
+            <div class="text-debt">
+                <p>Debt</p>
+                <div class="text-value">
+                <p>$10,000</p> 
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 20px;">        
+        <div style="display: inline-block; margin-right: 20px;">
+            <img src="bank.png" alt="Bank Icon" class="icon" onclick="location.href='syncAccount.html';">
+            <p>Sync Bank/eWallet</p>
+        </div>
+        <div style="display: inline-block; margin-right: 20px;">
+            <img src="AI_icon.png" alt="AI Icon" class="icon" onclick="location.href='AI.html';">
+            <p>AI Personal Financial Advisor</p>
+        </div>
+        <div style="display: inline-block; margin-right: 20px;">
+            <img src="graph-report.png" alt="Graph Icon" class="icon" onclick="location.href='financialHealthPage.html';">
+            <p>Financial Health</p>
+        </div>
+        <div style="display: inline-block; margin-right: 20px;">
+            <img src="shopping-cart.png" alt="Shopping Icon" class="icon" onclick="location.href='shoppingList.html';">
+            <p>Shopping List</p>
+        </div>
+        <div style="display: inline-block; margin-right: 20px;">
+            <img src="settings.svg" alt="Settings Icon" class="icon" onclick="location.href='settings.html';">
+            <p>Settings</p>
+        </div>
+        <!-- Add more icons as needed -->
+    </div>
+    
+        <!-- Add more icons as needed -->
+    </div>
+    
+
+    <footer>
+        <p>&copy; Debt.T. All rights reserved.</p>
+      </footer>
+</body>
+
+</html>

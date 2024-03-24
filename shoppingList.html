@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <style>
+        /* CSS styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .back-button {
+            color: #fff;
+            text-decoration: none;
+            margin-left: auto;
+        }
+        main {
+            padding: 20px;
+        }
+        #shopping-list-container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 8px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+  	    background-color: #333;
+  	    color: #fff;
+  	    text-align: center;
+  	    padding: 10px 0;
+	    margin-top: 400px;	
+	    }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="D.png" alt="App Logo" class="logo">
+        <h1>Shopping List</h1>
+        <a href="homePage.html" class="back-button">Back</a>
+    </header>
+    <main>
+        <div id="shopping-list-container">
+            <!-- Your shopping list items will be displayed here -->
+        </div>
+        <form id="add-item-form">
+            <input type="text" id="item-name" placeholder="Enter item...">
+            <button type="submit">Add Item</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; Debt.T. All rights reserved.</p>
+      </footer>
+    <script>
+        // JavaScript code for the page
+        document.getElementById('add-item-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            var newItem = document.getElementById('item-name').value;
+            if (newItem.trim() !== '') {
+                var newItemElement = document.createElement('div');
+                newItemElement.textContent = newItem;
+                document.getElementById('shopping-list-container').appendChild(newItemElement);
+                document.getElementById('item-name').value = ''; // Clear the input field
+            }
+        });
+    </script>
+</body>
+</html>

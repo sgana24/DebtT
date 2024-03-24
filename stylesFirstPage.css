@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.logo {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+#splashScreen {
+    text-align: center;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+#signInPage {
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync Bank / eWallet - Debt.T</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .centered-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            z-index: 1000;
+            display: none;
+        }
+
+        .details-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .account-container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .bank-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .account-number {
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .type-balance {
+            font-size: 14px;
+        }
+
+        .note {
+            text-align: center;
+            font-style: italic;
+        }
+
+        footer {
+  	    background-color: #333;
+  	    color: #fff;
+  	    text-align: center;
+  	    padding: 10px 0;
+	    margin-top: 400px;	
+	    }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        
+        <img src="appLogo.png" alt="App Logo" class="logo">
+        <a href="homePage.html" class="back-btn">&lt; Back</a>
+    </div>
+
+    <h1 class="page-title">Sync Your Bank / eWallet Accounts</h1>
+
+    <div class="centered-container">
+        <button id="addBankBtn" onclick="showPopup('Add Bank Account')">Add Bank Account</button>
+        <button id="addEWalletBtn" onclick="showPopup('Add eWallet')">Add eWallet</button>
+    </div>
+
+    <div id="popup" style="display: none;">
+        <h2 id="popupTitle">Add Bank Account</h2>
+        <form onsubmit="submitForm(event)">
+            <label for="bank">Bank/eWallet Name:</label>
+            <input type="text" id="bank" name="bank"><br><br>
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber"><br><br>
+            <input type="submit" value="Save">
+        </form>
+        <a href="#" onclick="hidePopup()">Close</a>
+    </div>
+
+    <div class="details-container" id="detailsContainer">
+        <!-- Bank/eWallet details will be displayed here -->
+    </div>
+
+    <p class="note">* Free account users are limited to syncing 2 accounts.</p>
+
+    <footer>
+        <p>&copy; Debt.T. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPopup(title) {
+            document.getElementById('popupTitle').innerText = title;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function submitForm(event) {
+            event.preventDefault(); // Prevent form submission
+            var form = event.target;
+            var bank = form.elements['bank'].value;
+            var accountNumber = form.elements['accountNumber'].value;
+            
+            // Create and display account container
+            var detailsContainer = document.getElementById('detailsContainer');
+            var accountContainer = document.createElement('div');
+            accountContainer.classList.add('account-container');
+
+            // Bank/eWallet name
+            var bankName = document.createElement('div');
+            bankName.classList.add('bank-name');
+            bankName.textContent = bank;
+            accountContainer.appendChild(bankName);
+
+            // Account number
+            var accountNum = document.createElement('div');
+            accountNum.classList.add('account-number');
+            accountNum.textContent = 'Account Number: ' + accountNumber;
+            accountContainer.appendChild(accountNum);
+
+            // Type of account and account balance (dummy data for display purposes)
+            var typeBalance = document.createElement('div');
+            typeBalance.classList.add('type-balance');
+            typeBalance.innerHTML = 'Type: Checking, Balance: $1000<br>Type: Savings, Balance: $5000';
+            accountContainer.appendChild(typeBalance);
+
+            detailsContainer.appendChild(accountContainer);
+
+            hidePopup(); // Hide the pop-up after form submission
+
+            // Disable buttons after form submission
+            if (document.getElementById('addBankBtn').disabled === false) {
+                document.getElementById('addBankBtn').disabled = true;
+            } else if (document.getElementById('addEWalletBtn').disabled === false) {
+                document.getElementById('addEWalletBtn').disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>
+
