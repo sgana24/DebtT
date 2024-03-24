@@ -180,6 +180,22 @@
         padding: 20px;
         border-radius: 5px;
     }
+	.btn-back {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+	    .btn-option {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
 
     </style>
 </head>
@@ -226,8 +242,10 @@
 
 <div id="optionsPopup" class="popup">
     <div class="popup-content">
-        <button onclick="showUploadFilePopup()">Upload File</button>
-        <button onclick="showInputOptions()">Input Manually</button>
+        <button class="btn-option" onclick="showUploadFilePopup()">Upload File</button>
+        <button class= "btn-option" onclick="showInputOptions()">Input Manually</button>
+	
+	<button class="btn-back" onclick="closeUploadFilePopup()">Back</button>
     </div>
 </div>
 
@@ -329,6 +347,9 @@ function showPrompt(option) {
     // Display the result or perform necessary actions
 }
 
+	function closeOptions() {
+        document.getElementById('optionsPopup').style.display = 'none';
+    }
 
         </script>
     
