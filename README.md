@@ -27,7 +27,7 @@ To get started with Debt.T, follow these steps:
 
 1. **Clone the Repository**: Clone the repository to your local machine.
    ```
-   git clone https://github.com/yourusername/debt-t.git
+   git clone https://github.com/sgana24/DebtT.git
    ```
 
 2. **Install Dependencies**: Install the necessary dependencies.
