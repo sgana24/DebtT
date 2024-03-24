@@ -56,4 +56,3 @@ Debt.T is licensed under the MIT License. See the [LICENSE](LICENSE) file for de
 
 ---
 
-Feel free to adjust the content as needed to accurately reflect your application's features and setup.
