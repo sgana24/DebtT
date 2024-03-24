@@ -1,4 +1,4 @@
-Here's a simplified README file for your Debt.T web application:
+
 
 ---
 
